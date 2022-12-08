@@ -78,21 +78,30 @@
 
 //                  ----Intersection types----
 
-type Draggable = {
-    drag: () => void
-};
+// type Draggable = {
+//     drag: () => void
+// };
 
-type Resizable = {
-resize: () => void
-}
+// type Resizable = {
+// resize: () => void
+// }
 
-// By using intersection;  above 2 types can be combined to one
+// // By using intersection;  above 2 types can be combined to one
 
-type UIWidget = Draggable & Resizable; // intersection type
+// type UIWidget = Draggable & Resizable; // intersection type
 
-let textBox: UIWidget = {
-    drag: () => {},
-    resize: () => {}
+// let textBox: UIWidget = {
+//     drag: () => {},
+//     resize: () => {}
 }
 
 //-----------------------------------------------------------------------------------
+
+//                      ----Literals Types---- (exact or specific value)
+
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = 'cm' | 'inch';
+
+//------------------------------------------------------------------------------------
