@@ -60,14 +60,39 @@
 
 //                  ----Union types----
 
-function kgToLbs(weight: number  | string): number{
-// Narrowing a union type to more specific type
-if (typeof weight === 'number')
-    return weight * 2.2;
-    else 
-    return parseInt(weight) * 2.2;
+//function kgToLbs(weight: number  | string): number{
 
+// Narrowing a union type to more specific type
+
+// if (typeof weight === 'number')
+//     return weight * 2.2;
+//     else 
+//     return parseInt(weight) * 2.2;
+
+// };
+
+// kgToLbs(10);
+// kgToLbs("10kg")
+
+//-------------------------------------------------------------------------------------
+
+//                  ----Intersection types----
+
+type Draggable = {
+    drag: () => void
 };
 
-kgToLbs(10);
-kgToLbs("10kg")
+type Resizable = {
+resize: () => void
+}
+
+// By using intersection;  above 2 types can be combined to one
+
+type UIWidget = Draggable & Resizable; // intersection type
+
+let textBox: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
+
+//-----------------------------------------------------------------------------------
