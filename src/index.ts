@@ -99,9 +99,21 @@
 
 //                      ----Literals Types---- (exact or specific value)
 
-type Quantity = 50 | 100;
-let quantity: Quantity = 100;
+// type Quantity = 50 | 100;
+// let quantity: Quantity = 100;
 
-type Metric = 'cm' | 'inch';
+// type Metric = 'cm' | 'inch';
 
 //------------------------------------------------------------------------------------
+
+//                      ----Nullable types----       
+
+function greet(name: string | null | undefined){
+    if(name)
+    console.log(name.toUpperCase())
+    else console.log('Hell0!');
+};
+
+greet(undefined);
+
+//--------------------------------------------------------------------------------------
